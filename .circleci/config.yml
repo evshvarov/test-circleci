@@ -1,0 +1,16 @@
+version: 2.1
+orbs:
+  gcp-gke: duksis/gcp-gke@0.1.9
+workflows:
+  main:
+    jobs:
+    - gcp-gke/publish-and-rollout-image:
+         google-project-id: GOOGLE_PROJECT_ID
+         gcloud-service-key: GCLOUD_SERVICE_KEY
+         registry-url: eu.gcr.io
+         image: iris-rest
+         tag: ${CIRCLE_SHA1}
+         cluster: dev-cluster
+         namespace: iris
+         deployment: iris-rest
+         container: iris-rest
