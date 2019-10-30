@@ -10,7 +10,7 @@ workflows:
          registry-url: eu.gcr.io
          image: iris-rest
          tag: ${CIRCLE_SHA1}
-         cluster: dev-cluster
+         cluster: your-first-cluster-1
          namespace: iris
          deployment: iris-rest
          container: iris-rest
