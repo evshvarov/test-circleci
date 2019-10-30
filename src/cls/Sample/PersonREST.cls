@@ -11,7 +11,14 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 <Route Url="/:id" Method="PUT" Call="UpdatePerson"/>
 <Route Url="/:id" Method="DELETE" Call="DeletePerson"/>
 <Route Url="/" Method="POST" Call="CreatePerson"/>
+<Route Url="/helloworld" Method="GET" Call="HelloWorld"/>
 </Routes>
+}
+
+ClassMethod HelloWorld() As %Status
+{
+        Write "Hello, world!"
+        Quit $$$OK
 }
 
 ClassMethod GetAllPersons() As %Status
